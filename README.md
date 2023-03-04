@@ -15,7 +15,7 @@ For more information about the house, data collection, R scripts and figures, pl
 
 [Web Link] (https://github.com/Richies2all/appliances_energy_prediction)
 
-Attribute Information:
+### Attribute Information:
 
 date time year-month-day hour:minute:second
 Appliances, energy use in Wh
@@ -50,6 +50,27 @@ rv2, Random variable 2, nondimensional
 Where indicated, hourly data (then interpolated) from the nearest airport weather station (Chievres Airport, Belgium) was downloaded from a public data set from Reliable Prognosis, rp5.ru. Permission was obtained from Reliable Prognosis for the distribution of the 4.5 months of weather data. 
 
 ## Environment Setup
+If your `conda` base environment is old, it is important that you install the `setuptools`and `wheel` packages that are dependencies for `autogluon`.
+```
+pip install setuptools wheel
+```
+
+Step 1: Create Environment
+```
+conda create --name applianceenv python=3.9 -y
+```
+
+Step 2. Activate Environment
+```
+conda activate applianceenv
+```
+Step 3. Install the required packages and dependencies
+```
+pip install setuptools wheel
+pip install torch==1.13.1+cpu torchvision==0.14.1+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+```
+pip install autogluon streamlit jupyter
+```
 
 ## Code Structure
 
