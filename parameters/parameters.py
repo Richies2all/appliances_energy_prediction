@@ -1,8 +1,17 @@
 import os
 
-FILE_NAME = "energydata_complete.csv"
-DATA_FOLDER = "data"
+ENERGY_FILE_NAME = "energydata_complete.csv"
+INSURANCE_FILE_NAME = "insurance.csv"
 
+DATA_FOLDER = "data"
 main_path = os.getcwd()
 
-file_path = os.path.join(os.path.join(main_path, DATA_FOLDER), FILE_NAME)
+energy_file_path = os.path.join(os.path.join(main_path, DATA_FOLDER), ENERGY_FILE_NAME)
+insurance_file_path = os.path.join(os.path.join(main_path, DATA_FOLDER), INSURANCE_FILE_NAME)
+
+autogluon_params = {
+    "label": "Appliances", 
+    "save_path": 'artefacts/models_regression', 
+    "problem_type": "regression",
+    "time_limit": 60,
+}
